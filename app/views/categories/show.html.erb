@@ -1,0 +1,7 @@
+<h1><%= @category.name %> Snippets</h1>
+
+<% @snippets.each do |c| %>
+  <div class= "controller">
+    <%= link_to "#{c.title}", snippet_path(c) %>
+  </div>
+<% end %>
