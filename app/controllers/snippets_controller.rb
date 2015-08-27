@@ -15,6 +15,8 @@ class SnippetsController < ApplicationController
 
   def show
     @snippet = Snippet.find(params[:id])
+    @snippet.work = @snippet.work.gsub(" ","&nbsp")
+    @snippet.work = @snippet.work.gsub("\n","<br>")
   end
 
   def destroy
