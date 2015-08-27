@@ -4,13 +4,15 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    @snippet = Snippet.new snippet_params
 
-    if @snippet.save
-      redirect_to root_path, notice: "Snippet created!"
-    else
-      render :new, alert: "Snippet not saved! See errors!"
-    end
+    render json: params
+    # @snippet = Snippet.new snippet_params
+    #
+    # if @snippet.save
+    #   redirect_to root_path, notice: "Snippet created!"
+    # else
+    #   render :new, alert: "Snippet not saved! See errors!"
+    # end
   end
 
   def show
